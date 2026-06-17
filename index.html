@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- ODYSSEY_QISHI_GATE_V1 · 免密直登 + AI shim only (2026-05-28 移除密码门 + 返回主页按钮,
+     仅保留 window.claude.complete shim, 注入 <head> 顶) -->
+<script>
+(function(){
+  // 清理历史 localStorage (密码门时代遗留 key, 不影响功能但保持干净)
+  try{ localStorage.removeItem('odyssey_qishi_auth_v1'); }catch(e){}
+
+  // ── window.claude.complete shim → mbwa-api /api/llm/invest-chat (qwen-plus 64K)
+  // Coach.jsx 原本调 window.claude.complete (Claude Artifacts API), 部署到
+  // h5.odysseyinst.com 后 window.claude=undefined → "AI 教练暂时不可达".
+  // 此 shim 把请求转给 dashboard.84k.tech 上的千问代理, 并按 gate 关键字注入
+  // 对应卷.md 作为 RAG reference. qwen-plus 中文最强, 单卷 75KB 也吃得下.
+  var GATE_MAP = {
+    '原力觉醒': 'volume-2-juexing.md',
+    '品类独创': 'volume-3-pinlei.md',
+    '模式升维': 'volume-4-shengwei.md',
+    '壁垒锁定': 'volume-5-suoding.md'
+  };
+  var FALLBACK_VOL = 'volume-1-zonggang.md';  // 无关键词命中时兜底注入总纲(使六卷全可达)
+  var _volCache = {};
+  async function _loadVol(name){
+    if(_volCache[name]!==undefined) return _volCache[name];
+    try{
+      var r = await fetch(name);
+      _volCache[name] = r.ok ? await r.text() : '';
+    }catch(e){ _volCache[name] = ''; }
+    return _volCache[name];
+  }
+
+  // ── 全站知识总览: 提问时所有 data/*.jsx 全局已就位, 现拼一份紧凑摘要(广度),
+  //    让教练对 12人格/58原子/16控点/全部康波案例/学员/六卷 全有总览, 再路由到对应卷(深度).
+  var _digestCache = null;
+  function _digest(){
+    if(_digestCache!==null) return _digestCache;
+    var L = [];
+    try{ var A=window.ARCHETYPES; if(A&&A.length) L.push('【12人格原型】'+A.map(function(a){return a.name+'('+(a.drive||'')+'/阴影:'+(a.shadow||'')+')';}).join('；')); }catch(e){}
+    try{ var T=window.ATOMS; if(T&&T.length){ var bc={}; T.forEach(function(a){(bc[a.chain]=bc[a.chain]||[]).push(a.id+' '+a.name+':'+a.core);}); var s=[]; for(var c in bc) s.push(c+'→'+bc[c].join('；')); L.push('【58商业原子】'+s.join('  ‖  ')); } }catch(e){}
+    try{ var P=window.CONTROLS; if(P&&P.length) L.push('【16战略控点】'+P.map(function(p){return p.id+' '+p.name+':'+p.core;}).join('；')); }catch(e){}
+    try{ var K=window.CYCLES; if(K&&K.length) L.push('【康波K1-K6】'+K.map(function(k){return k.key+' '+k.name+'('+k.era+'·当令'+k.rulingPersona+')';}).join('；')); }catch(e){}
+    try{ var CS=window.CASES; if(CS&&CS.length) L.push('【'+CS.length+'康波案例】'+CS.map(function(c){return c.id+' '+c.who+':'+c.oneLine+c.evidence+(c.side==='supply'?'[供]':'[需]');}).join('；')); }catch(e){}
+    try{ var S=window.STUDENTS; if(S&&S.length) L.push('【学员案例】'+S.filter(function(x){return !x.hide;}).map(function(x){return x.name+'·'+x.biz;}).join('；')); }catch(e){}
+    try{ var TK=window.TOOLKIT; if(TK&&TK.length){ var tg={}; TK.forEach(function(s){(tg[s.gate]=tg[s.gate]||[]).push(s.code+' '+s.title+':'+s.body+(s.bar?'[过关线:'+s.bar+']':''));}); var ts=[]; for(var tgk in tg) ts.push(tgk+'→'+tg[tgk].join('；')); L.push('【'+TK.length+'通关锦囊·AI驱动技能点(一句话判断+可量化过关线)】'+ts.join('  ‖  ')); } }catch(e){}
+    L.push('【绿皮书六卷】卷一总纲 / 卷二原力觉醒(12人格) / 卷三品类独创(一句入脑) / 卷四模式升维(58原子) / 卷五壁垒锁定(16控点+康波) / 卷六附录');
+    _digestCache = L.join('\n');
+    return _digestCache;
+  }
+
+  // 用户问到具体康波案例(命中 who 分词或 id)时, 把该案例完整记录拼进去做深答(最多3条)
+  function _caseDetail(prompt){
+    try{
+      var CS=window.CASES; if(!CS) return '';
+      var hits=[];
+      for(var i=0;i<CS.length && hits.length<3;i++){
+        var c=CS[i], raw=(c.who||'');
+        ['（','）','(',')','·','/',' ','、'].forEach(function(d){ raw=raw.split(d).join('|'); });
+        var toks=raw.split('|').filter(function(x){ x=x.trim(); if(x.length<2) return false; if(/^[A-Za-z']+$/.test(x)&&x.length<4) return false; return true; });
+        var hit = prompt.indexOf(c.id)!==-1 || toks.some(function(t){return prompt.indexOf(t)!==-1;});
+        if(hit) hits.push('· '+c.id+' '+c.who+'('+c.cycle+'/'+c.arch+')'+c.evidence
+          +'\n  一句话:'+c.oneLine+'\n  ①反常识:'+c.insight+'\n  ②范式跃迁:'+c.mechanism
+          +'\n  ③价值重分配:'+c.redistribution+'\n  财务:'+c.finance+'\n  原子:'+(c.atoms||[]).join(',')+'\n  信源:'+c.sources);
+      }
+      return hits.join('\n\n');
+    }catch(e){ return ''; }
+  }
+
+  window.claude = window.claude || {};
+  window.claude.complete = async function(prompt){
+    // invest-chat 后端 hard limit prompt ≤ 20000 char; 预算 19000 留余量
+    var BUDGET = 19000;
+    var digest = _digest();
+    var detail = _caseDetail(prompt);
+    var gateFile = null;
+    for(var kw in GATE_MAP){ if(prompt.indexOf(kw) !== -1){ gateFile = GATE_MAP[kw]; break; } }
+    if(!gateFile) gateFile = FALLBACK_VOL;
+    var vol = await _loadVol(gateFile);
+
+    var head = prompt
+      + '\n\n=== 全站知识总览(你已掌握以下全部,据此作答) ===\n' + digest
+      + (detail ? '\n\n=== 相关康波案例(详) ===\n' + detail : '');
+    var remain = BUDGET - head.length - 80;   // 广度优先: 先保 digest+案例, 卷节选吃剩余预算
+    var ref = (vol && remain > 1500) ? ('\n\n=== 绿皮书对应卷(节选) ===\n' + vol.slice(0, remain)) : '';
+    var fullPrompt = (head + ref).slice(0, 19500);
+
+    var r = await fetch('https://os-zk.84000.art/api/llm/invest-chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: fullPrompt })
+    });
+    if(!r.ok){
+      var t = await r.text().catch(function(){return ''});
+      throw new Error('LLM upstream ' + r.status + ': ' + t.slice(0, 200));
+    }
+    var j = await r.json();
+    return j.text || '';
+  };
+})();
+</script>
+<!-- /ODYSSEY_QISHI_GATE_V1 -->
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>借势合力 · 原力创业 · 通关地图 · 绿皮书 V1.0</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Noto+Serif+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles/luxe.css" />
+</head>
+<body>
+
+<!-- React root -->
+<div id="root"></div>
+
+<!-- React + Babel (pinned) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- DATA · 12 archetypes / 58 atoms / 16 controls / 8 students / K1-K6 / 4 gates -->
+<script type="text/babel" src="data/archetypes.jsx"></script>
+<script type="text/babel" src="data/atoms.jsx"></script>
+<script type="text/babel" src="data/controls.jsx"></script>
+<script type="text/babel" src="data/gates.jsx"></script>
+<script type="text/babel" src="data/cases.jsx"></script>
+<script type="text/babel" src="data/toolkit.jsx"></script>
+
+<!-- COMPONENTS -->
+<script type="text/babel" src="components/MapView.jsx"></script>
+<script type="text/babel" src="components/GateGrid.jsx"></script>
+<script type="text/babel" src="components/ArchetypeWall.jsx"></script>
+<script type="text/babel" src="components/AtomWall.jsx"></script>
+<script type="text/babel" src="components/ControlMatrix.jsx"></script>
+<script type="text/babel" src="components/CaseMatrix.jsx"></script>
+<script type="text/babel" src="components/CasesRail.jsx"></script>
+<script type="text/babel" src="components/Checklist.jsx"></script>
+<script type="text/babel" src="components/Coach.jsx"></script>
+<script type="text/babel" src="components/Toolkit.jsx"></script>
+
+<!-- MAIN APP -->
+<script type="text/babel" src="app.jsx"></script>
+
+</body>
+</html>
