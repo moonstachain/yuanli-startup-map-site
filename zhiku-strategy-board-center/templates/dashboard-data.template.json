@@ -1,0 +1,216 @@
+{
+  "project_id": "{{project_id}}",
+  "title": "{{title}}",
+  "north_star": "{{north_star}}",
+  "status": "设计",
+  "cbm_osa_map": {
+    "capability_domains": [
+      "能力域",
+      "系统模块",
+      "渠道",
+      "数据源",
+      "产物",
+      "风险"
+    ],
+    "responsibility_layers": [
+      "战略层",
+      "设计层",
+      "执行层",
+      "验证层",
+      "递归进化层"
+    ],
+    "coverage_cells": [],
+    "missing_cells": [],
+    "risk_cells": [],
+    "next_cells_to_unlock": []
+  },
+  "okr": [],
+  "milestones": [],
+  "actions": [],
+  "risks": [],
+  "decisions_needed": [],
+  "evidence_refs": [],
+  "progress": {
+    "percent": 0,
+    "status_text": "待建模"
+  },
+  "density_score": {
+    "dimensions": {
+      "时间密度": 0,
+      "判定密度": 0,
+      "不确定性": 0,
+      "多源交叉": 0,
+      "共识/分歧": 0,
+      "frozen/dynamic": 0,
+      "状态机": 0,
+      "高维降维": 0,
+      "行动建议": 0,
+      "元信息": 0,
+      "历史轨迹": 0,
+      "个人意义": 0
+    },
+    "total": 0,
+    "max": 120
+  },
+  "dashboard_score": {
+    "dimensions": {
+      "时间密度": 0,
+      "判定密度": 0,
+      "不确定性": 0,
+      "多源交叉": 0,
+      "共识/分歧": 0,
+      "frozen/dynamic": 0,
+      "状态机": 0,
+      "高维降维": 0,
+      "行动建议": 0,
+      "元信息": 0,
+      "历史轨迹": 0,
+      "个人意义": 0
+    },
+    "total": 0,
+    "max": 120
+  },
+  "data_freshness": {
+    "generated_at": "{{iso_timestamp}}",
+    "source_mode": "local_scan",
+    "external_state_verified": false
+  },
+  "lifecycle": {
+    "version": "v2",
+    "current": "设计",
+    "states": [
+      "探索",
+      "设计",
+      "推进",
+      "阻塞",
+      "收敛",
+      "复盘"
+    ],
+    "flow": [
+      {
+        "from": "探索",
+        "to": "设计",
+        "gate": "目标、范围、证据入口确认"
+      },
+      {
+        "from": "设计",
+        "to": "推进",
+        "gate": "OKR、里程碑、Top actions 确认"
+      },
+      {
+        "from": "推进",
+        "to": "阻塞",
+        "gate": "出现待拍板、权限、数据或依赖阻塞"
+      },
+      {
+        "from": "推进",
+        "to": "收敛",
+        "gate": "主要交付物进入验收"
+      },
+      {
+        "from": "收敛",
+        "to": "复盘",
+        "gate": "验收完成并沉淀经验"
+      }
+    ],
+    "transition_policy": "manual_decision_only"
+  },
+  "operating_ledgers": {},
+  "external_write_gates": [
+    {
+      "target": "online_zhiku",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "feishu_base",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "notification",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    }
+  ],
+  "external_projection_candidates": [
+    {
+      "target": "online_zhiku",
+      "mode": "dry_run",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "feishu_base",
+      "mode": "dry_run",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "notification",
+      "mode": "dry_run",
+      "approval_required": true,
+      "status": "closed"
+    }
+  ],
+  "rebuild_policy": {
+    "mode": "regenerate_operational_signals_preserve_manual_judgment",
+    "manual_overrides_supported": true
+  },
+  "source_portfolio": [
+    {
+      "name": "high-info-density-dashboard-designer",
+      "role": "12 维信息密度评分标准"
+    },
+    {
+      "name": "deep-space-cockpit-factory",
+      "role": "单页 HTML cockpit 的数据/渲染分离范式"
+    },
+    {
+      "name": "ip-company-strategy-cockpit",
+      "role": "IP/企业战略判断型驾驶舱模板参考"
+    },
+    {
+      "name": "dixin-strategy-cockpit",
+      "role": "战略判断、项目排布、预警型驾驶舱模板参考"
+    },
+    {
+      "name": "feishu-dashboard-automator",
+      "role": "后续飞书投射层，v1 不真写入"
+    },
+    {
+      "name": "lark-base",
+      "role": "后续 Base/多维表格承载，v1 不真写入"
+    },
+    {
+      "name": "task-spec",
+      "role": "战略任务规格草案生成器"
+    },
+    {
+      "name": "yuanli-os-cbm-osa-greenbook",
+      "role": "CBM-OSA 横向到边、纵向到底的战略母版"
+    }
+  ],
+  "navigation": {
+    "primary": "战略看板",
+    "sub_entries": [
+      "全部项目",
+      "P0-P1 项目",
+      "风险项目",
+      "待拍板",
+      "已完成",
+      "模板库"
+    ]
+  },
+  "last_updated": "{{iso_timestamp}}",
+  "safety": {
+    "local_only": true,
+    "writes_online": false,
+    "writes_feishu": false,
+    "mutates_real_project_status": false,
+    "external_sync_mode": "candidate_list_only"
+  }
+}

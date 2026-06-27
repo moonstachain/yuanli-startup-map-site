@@ -1,0 +1,14 @@
+{
+  "id": "luki-max-content-engine",
+  "label": "Luki Max 内容工程",
+  "href": "../../strategic-projects/luki-max-content-engine/dashboard.html",
+  "status": "design",
+  "risk": "amber",
+  "owner": "liming",
+  "last_updated": "2026-06-26",
+  "external_sync": "approval_required",
+  "dashboard_file": "claude-harness/strategic-projects/luki-max-content-engine/dashboard.html",
+  "project_dir": "claude-harness/strategic-projects/luki-max-content-engine",
+  "dashboard_score": 105,
+  "next_action": "为 build_looki_ops.py 增加 production_score 与 moment_category"
+}

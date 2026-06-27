@@ -1,0 +1,970 @@
+{
+  "generated_at": "2026-06-27T11:26:46+00:00",
+  "version": "v2",
+  "root": "claude-harness/zhiku-self-assess/strategy-boards",
+  "protocol": "识别 -> 建项 -> 生成看板 -> 行动台账 -> 风险台账 -> 证据回链 -> 本地验收 -> 外部投射候选",
+  "rules": {
+    "keywords": [
+      "战略",
+      "OS",
+      "Max",
+      "cockpit",
+      "看板",
+      "路线图",
+      "原力",
+      "Luki",
+      "Looki",
+      "飞书",
+      "自动化",
+      "审核门",
+      "项目推进"
+    ],
+    "structural_markers": [
+      "长期目标",
+      "跨系统依赖",
+      "跨系统",
+      "多人/多工具协作",
+      "多工具",
+      "外部发布门",
+      "外部发布",
+      "飞书/原力大脑/线上同步",
+      "原力大脑",
+      "平台同步",
+      "平台投射",
+      "跨团队",
+      "跨部门",
+      "多人",
+      "协作",
+      "发布门",
+      "线上同步",
+      "同步"
+    ]
+  },
+  "navigation": {
+    "primary": "战略看板",
+    "sub_entries": [
+      "全部项目",
+      "P0-P1 项目",
+      "风险项目",
+      "待拍板",
+      "已完成",
+      "模板库"
+    ]
+  },
+  "lifecycle": {
+    "states": [
+      "探索",
+      "设计",
+      "推进",
+      "阻塞",
+      "收敛",
+      "复盘"
+    ],
+    "flow": [
+      {
+        "from": "探索",
+        "to": "设计",
+        "gate": "目标、范围、证据入口确认"
+      },
+      {
+        "from": "设计",
+        "to": "推进",
+        "gate": "OKR、里程碑、Top actions 确认"
+      },
+      {
+        "from": "推进",
+        "to": "阻塞",
+        "gate": "出现待拍板、权限、数据或依赖阻塞"
+      },
+      {
+        "from": "推进",
+        "to": "收敛",
+        "gate": "主要交付物进入验收"
+      },
+      {
+        "from": "收敛",
+        "to": "复盘",
+        "gate": "验收完成并沉淀经验"
+      }
+    ],
+    "transition_policy": "manual_decision_only"
+  },
+  "model": {
+    "name": "double_layer_strategy_board",
+    "top": "CBM-OSA 战略图",
+    "bottom": "OKR/任务执行表",
+    "right_rail": "拍板区 / 外部写入门 / 风险灯 / 最近证据"
+  },
+  "source_portfolio": [
+    {
+      "name": "high-info-density-dashboard-designer",
+      "role": "12 维信息密度评分标准"
+    },
+    {
+      "name": "deep-space-cockpit-factory",
+      "role": "单页 HTML cockpit 的数据/渲染分离范式"
+    },
+    {
+      "name": "ip-company-strategy-cockpit",
+      "role": "IP/企业战略判断型驾驶舱模板参考"
+    },
+    {
+      "name": "dixin-strategy-cockpit",
+      "role": "战略判断、项目排布、预警型驾驶舱模板参考"
+    },
+    {
+      "name": "feishu-dashboard-automator",
+      "role": "后续飞书投射层，v1 不真写入"
+    },
+    {
+      "name": "lark-base",
+      "role": "后续 Base/多维表格承载，v1 不真写入"
+    },
+    {
+      "name": "task-spec",
+      "role": "战略任务规格草案生成器"
+    },
+    {
+      "name": "yuanli-os-cbm-osa-greenbook",
+      "role": "CBM-OSA 横向到边、纵向到底的战略母版"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "yuanli-os-max",
+      "title": "原力OS-MAX",
+      "priority": "P0",
+      "status": "设计",
+      "risk_light": "red",
+      "north_star": "把原力 OS 的 CBM-OSA 能力域、责任层、递归进化机制压成一张可执行总图。",
+      "next_action": "补齐 project-spec.md 的范围、验收项和 typed relationships",
+      "decision_count": 2,
+      "evidence_count": 3,
+      "density_score": {
+        "dimensions": {
+          "时间密度": 5,
+          "判定密度": 9,
+          "不确定性": 8,
+          "多源交叉": 8,
+          "共识/分歧": 6,
+          "frozen/dynamic": 8,
+          "状态机": 9,
+          "高维降维": 9,
+          "行动建议": 9,
+          "元信息": 9,
+          "历史轨迹": 5,
+          "个人意义": 9
+        },
+        "total": 94,
+        "max": 120,
+        "grade": "high-density",
+        "rubric": "high-info-density-dashboard-designer 12 维"
+      },
+      "recognition": {
+        "strategic_task": true,
+        "reasons": [
+          "keyword:Max",
+          "keyword:OS",
+          "keyword:原力",
+          "keyword:项目推进",
+          "source_trigger:OSA"
+        ],
+        "mode": "auto_draft_local_only"
+      },
+      "lifecycle": {
+        "version": "v2",
+        "current": "设计",
+        "states": [
+          "探索",
+          "设计",
+          "推进",
+          "阻塞",
+          "收敛",
+          "复盘"
+        ],
+        "flow": [
+          {
+            "from": "探索",
+            "to": "设计",
+            "gate": "目标、范围、证据入口确认"
+          },
+          {
+            "from": "设计",
+            "to": "推进",
+            "gate": "OKR、里程碑、Top actions 确认"
+          },
+          {
+            "from": "推进",
+            "to": "阻塞",
+            "gate": "出现待拍板、权限、数据或依赖阻塞"
+          },
+          {
+            "from": "推进",
+            "to": "收敛",
+            "gate": "主要交付物进入验收"
+          },
+          {
+            "from": "收敛",
+            "to": "复盘",
+            "gate": "验收完成并沉淀经验"
+          }
+        ],
+        "transition_policy": "manual_decision_only",
+        "status_source": "preserved_existing_dashboard_data"
+      },
+      "operating_ledgers": {
+        "action_ledger": {
+          "count": 3,
+          "open_count": 3,
+          "p0_count": 2
+        },
+        "risk_register": {
+          "count": 2,
+          "red_count": 1,
+          "amber_count": 1
+        },
+        "decision_queue": {
+          "count": 2,
+          "owners": [
+            "liming"
+          ]
+        },
+        "evidence_index": {
+          "count": 3,
+          "missing_or_low_count": 0
+        },
+        "gap_register": {
+          "missing_cells": 8,
+          "risk_cells": 1,
+          "next_cells": 3,
+          "gap_policy": "缺口必须显式显示为待采集/待确认/missing，不得渲染为绿色。"
+        }
+      },
+      "external_projection_candidates": [
+        {
+          "target": "online_zhiku",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_publish"
+        },
+        {
+          "target": "feishu_base",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_bitable_write"
+        },
+        {
+          "target": "notification",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "risk_light",
+            "next_action",
+            "decisions_needed"
+          ],
+          "receipt": "candidate_only_no_notification"
+        }
+      ],
+      "rebuild_policy": {
+        "mode": "regenerate_operational_signals_preserve_manual_judgment",
+        "preserved_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "manual_override_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "regenerated_fields": [
+          "evidence_refs",
+          "cbm_osa_map",
+          "density_score",
+          "dashboard_score",
+          "data_freshness",
+          "risk_light",
+          "next_action",
+          "operating_ledgers",
+          "external_projection_candidates"
+        ],
+        "manual_overrides_supported": true
+      },
+      "dashboard": "yuanli-os-max/dashboard.html",
+      "data": "yuanli-os-max/dashboard-data.json",
+      "spec": "yuanli-os-max/project-spec.md"
+    },
+    {
+      "project_id": "looki-auto-operations",
+      "title": "Looki 自动运营",
+      "priority": "P0",
+      "status": "推进",
+      "risk_light": "amber",
+      "north_star": "把 Looki 生活记忆变成每日可归档、可搜索、可剪辑、可复盘的自动化生产系统。",
+      "next_action": "补齐 project-spec.md 的范围、验收项和 typed relationships",
+      "decision_count": 2,
+      "evidence_count": 6,
+      "density_score": {
+        "dimensions": {
+          "时间密度": 5,
+          "判定密度": 9,
+          "不确定性": 8,
+          "多源交叉": 10,
+          "共识/分歧": 6,
+          "frozen/dynamic": 8,
+          "状态机": 9,
+          "高维降维": 9,
+          "行动建议": 9,
+          "元信息": 9,
+          "历史轨迹": 5,
+          "个人意义": 9
+        },
+        "total": 96,
+        "max": 120,
+        "grade": "high-density",
+        "rubric": "high-info-density-dashboard-designer 12 维"
+      },
+      "recognition": {
+        "strategic_task": true,
+        "reasons": [
+          "keyword:Looki",
+          "keyword:战略",
+          "keyword:自动化",
+          "keyword:飞书",
+          "source_trigger:CBM"
+        ],
+        "mode": "auto_draft_local_only"
+      },
+      "lifecycle": {
+        "version": "v2",
+        "current": "推进",
+        "states": [
+          "探索",
+          "设计",
+          "推进",
+          "阻塞",
+          "收敛",
+          "复盘"
+        ],
+        "flow": [
+          {
+            "from": "探索",
+            "to": "设计",
+            "gate": "目标、范围、证据入口确认"
+          },
+          {
+            "from": "设计",
+            "to": "推进",
+            "gate": "OKR、里程碑、Top actions 确认"
+          },
+          {
+            "from": "推进",
+            "to": "阻塞",
+            "gate": "出现待拍板、权限、数据或依赖阻塞"
+          },
+          {
+            "from": "推进",
+            "to": "收敛",
+            "gate": "主要交付物进入验收"
+          },
+          {
+            "from": "收敛",
+            "to": "复盘",
+            "gate": "验收完成并沉淀经验"
+          }
+        ],
+        "transition_policy": "manual_decision_only",
+        "status_source": "preserved_existing_dashboard_data"
+      },
+      "operating_ledgers": {
+        "action_ledger": {
+          "count": 3,
+          "open_count": 3,
+          "p0_count": 2
+        },
+        "risk_register": {
+          "count": 2,
+          "red_count": 0,
+          "amber_count": 2
+        },
+        "decision_queue": {
+          "count": 2,
+          "owners": [
+            "liming"
+          ]
+        },
+        "evidence_index": {
+          "count": 6,
+          "missing_or_low_count": 0
+        },
+        "gap_register": {
+          "missing_cells": 8,
+          "risk_cells": 1,
+          "next_cells": 3,
+          "gap_policy": "缺口必须显式显示为待采集/待确认/missing，不得渲染为绿色。"
+        }
+      },
+      "external_projection_candidates": [
+        {
+          "target": "online_zhiku",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_publish"
+        },
+        {
+          "target": "feishu_base",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_bitable_write"
+        },
+        {
+          "target": "notification",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "risk_light",
+            "next_action",
+            "decisions_needed"
+          ],
+          "receipt": "candidate_only_no_notification"
+        }
+      ],
+      "rebuild_policy": {
+        "mode": "regenerate_operational_signals_preserve_manual_judgment",
+        "preserved_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "manual_override_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "regenerated_fields": [
+          "evidence_refs",
+          "cbm_osa_map",
+          "density_score",
+          "dashboard_score",
+          "data_freshness",
+          "risk_light",
+          "next_action",
+          "operating_ledgers",
+          "external_projection_candidates"
+        ],
+        "manual_overrides_supported": true
+      },
+      "dashboard": "looki-auto-operations/dashboard.html",
+      "data": "looki-auto-operations/dashboard-data.json",
+      "spec": "looki-auto-operations/project-spec.md"
+    },
+    {
+      "project_id": "luki-max-content-engine",
+      "title": "Luki Max 全自动内容工程",
+      "priority": "P0",
+      "status": "设计",
+      "risk_light": "amber",
+      "north_star": "每天把 24 小时伴随素材转成生产力证据、选题队列、样片任务、私人提醒和原力大脑审核候选。",
+      "next_action": "升级 Looki daily 真相层：为每个 moment 写入 production_score、moment_category、privacy_reason、next_action",
+      "decision_count": 2,
+      "evidence_count": 11,
+      "density_score": {
+        "dimensions": {
+          "时间密度": 5,
+          "判定密度": 9,
+          "不确定性": 8,
+          "多源交叉": 10,
+          "共识/分歧": 6,
+          "frozen/dynamic": 8,
+          "状态机": 9,
+          "高维降维": 9,
+          "行动建议": 10,
+          "元信息": 9,
+          "历史轨迹": 5,
+          "个人意义": 9
+        },
+        "total": 97,
+        "max": 120,
+        "grade": "high-density",
+        "rubric": "high-info-density-dashboard-designer 12 维"
+      },
+      "recognition": {
+        "strategic_task": true,
+        "reasons": [
+          "keyword:Luki",
+          "keyword:Max",
+          "keyword:OS",
+          "keyword:原力",
+          "keyword:审核门",
+          "keyword:战略",
+          "keyword:看板",
+          "keyword:飞书",
+          "source_trigger:OSA",
+          "structural:原力大脑"
+        ],
+        "mode": "auto_draft_local_only"
+      },
+      "lifecycle": {
+        "version": "v2",
+        "current": "设计",
+        "states": [
+          "探索",
+          "设计",
+          "推进",
+          "阻塞",
+          "收敛",
+          "复盘"
+        ],
+        "flow": [
+          {
+            "from": "探索",
+            "to": "设计",
+            "gate": "目标、范围、证据入口确认"
+          },
+          {
+            "from": "设计",
+            "to": "推进",
+            "gate": "OKR、里程碑、Top actions 确认"
+          },
+          {
+            "from": "推进",
+            "to": "阻塞",
+            "gate": "出现待拍板、权限、数据或依赖阻塞"
+          },
+          {
+            "from": "推进",
+            "to": "收敛",
+            "gate": "主要交付物进入验收"
+          },
+          {
+            "from": "收敛",
+            "to": "复盘",
+            "gate": "验收完成并沉淀经验"
+          }
+        ],
+        "transition_policy": "manual_decision_only",
+        "status_source": "preserved_existing_dashboard_data"
+      },
+      "operating_ledgers": {
+        "action_ledger": {
+          "count": 6,
+          "open_count": 6,
+          "p0_count": 3
+        },
+        "risk_register": {
+          "count": 3,
+          "red_count": 1,
+          "amber_count": 2
+        },
+        "decision_queue": {
+          "count": 2,
+          "owners": [
+            "liming"
+          ]
+        },
+        "evidence_index": {
+          "count": 11,
+          "missing_or_low_count": 0
+        },
+        "gap_register": {
+          "missing_cells": 10,
+          "risk_cells": 0,
+          "next_cells": 4,
+          "gap_policy": "缺口必须显式显示为待采集/待确认/missing，不得渲染为绿色。"
+        }
+      },
+      "external_projection_candidates": [
+        {
+          "target": "online_zhiku",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_publish"
+        },
+        {
+          "target": "feishu_base",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_bitable_write"
+        },
+        {
+          "target": "notification",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "risk_light",
+            "next_action",
+            "decisions_needed"
+          ],
+          "receipt": "candidate_only_no_notification"
+        }
+      ],
+      "rebuild_policy": {
+        "mode": "regenerate_operational_signals_preserve_manual_judgment",
+        "preserved_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "manual_override_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "regenerated_fields": [
+          "evidence_refs",
+          "cbm_osa_map",
+          "density_score",
+          "dashboard_score",
+          "data_freshness",
+          "risk_light",
+          "next_action",
+          "operating_ledgers",
+          "external_projection_candidates"
+        ],
+        "manual_overrides_supported": true
+      },
+      "dashboard": "luki-max-content-engine/dashboard.html",
+      "data": "luki-max-content-engine/dashboard-data.json",
+      "spec": "luki-max-content-engine/project-spec.md"
+    },
+    {
+      "project_id": "zhiku-2-strategy-board-center",
+      "title": "随身智库 2.0 · 战略看板中心",
+      "priority": "P0",
+      "status": "推进",
+      "risk_light": "amber",
+      "north_star": "战略型任务启动后，10 分钟内自动生成可本地打开的高密度战略看板草案。",
+      "next_action": "补齐 project-spec.md 的范围、验收项和 typed relationships",
+      "decision_count": 2,
+      "evidence_count": 3,
+      "density_score": {
+        "dimensions": {
+          "时间密度": 7,
+          "判定密度": 9,
+          "不确定性": 8,
+          "多源交叉": 8,
+          "共识/分歧": 6,
+          "frozen/dynamic": 8,
+          "状态机": 9,
+          "高维降维": 9,
+          "行动建议": 9,
+          "元信息": 9,
+          "历史轨迹": 7,
+          "个人意义": 9
+        },
+        "total": 98,
+        "max": 120,
+        "grade": "high-density",
+        "rubric": "high-info-density-dashboard-designer 12 维"
+      },
+      "recognition": {
+        "strategic_task": true,
+        "reasons": [
+          "keyword:战略",
+          "keyword:看板",
+          "structural:同步"
+        ],
+        "mode": "auto_draft_local_only"
+      },
+      "lifecycle": {
+        "version": "v2",
+        "current": "推进",
+        "states": [
+          "探索",
+          "设计",
+          "推进",
+          "阻塞",
+          "收敛",
+          "复盘"
+        ],
+        "flow": [
+          {
+            "from": "探索",
+            "to": "设计",
+            "gate": "目标、范围、证据入口确认"
+          },
+          {
+            "from": "设计",
+            "to": "推进",
+            "gate": "OKR、里程碑、Top actions 确认"
+          },
+          {
+            "from": "推进",
+            "to": "阻塞",
+            "gate": "出现待拍板、权限、数据或依赖阻塞"
+          },
+          {
+            "from": "推进",
+            "to": "收敛",
+            "gate": "主要交付物进入验收"
+          },
+          {
+            "from": "收敛",
+            "to": "复盘",
+            "gate": "验收完成并沉淀经验"
+          }
+        ],
+        "transition_policy": "manual_decision_only",
+        "status_source": "preserved_existing_dashboard_data"
+      },
+      "operating_ledgers": {
+        "action_ledger": {
+          "count": 3,
+          "open_count": 3,
+          "p0_count": 2
+        },
+        "risk_register": {
+          "count": 2,
+          "red_count": 0,
+          "amber_count": 2
+        },
+        "decision_queue": {
+          "count": 2,
+          "owners": [
+            "liming"
+          ]
+        },
+        "evidence_index": {
+          "count": 3,
+          "missing_or_low_count": 0
+        },
+        "gap_register": {
+          "missing_cells": 9,
+          "risk_cells": 0,
+          "next_cells": 3,
+          "gap_policy": "缺口必须显式显示为待采集/待确认/missing，不得渲染为绿色。"
+        }
+      },
+      "external_projection_candidates": [
+        {
+          "target": "online_zhiku",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_publish"
+        },
+        {
+          "target": "feishu_base",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "title",
+            "priority",
+            "status",
+            "risk_light",
+            "north_star",
+            "next_action",
+            "decisions_needed",
+            "evidence_refs"
+          ],
+          "receipt": "candidate_only_no_bitable_write"
+        },
+        {
+          "target": "notification",
+          "mode": "dry_run",
+          "status": "closed",
+          "approval_required": true,
+          "fields": [
+            "project_id",
+            "risk_light",
+            "next_action",
+            "decisions_needed"
+          ],
+          "receipt": "candidate_only_no_notification"
+        }
+      ],
+      "rebuild_policy": {
+        "mode": "regenerate_operational_signals_preserve_manual_judgment",
+        "preserved_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "manual_override_fields": [
+          "status",
+          "status_machine",
+          "north_star",
+          "governing_thought",
+          "okr",
+          "milestones",
+          "actions",
+          "risks",
+          "decisions_needed",
+          "progress"
+        ],
+        "regenerated_fields": [
+          "evidence_refs",
+          "cbm_osa_map",
+          "density_score",
+          "dashboard_score",
+          "data_freshness",
+          "risk_light",
+          "next_action",
+          "operating_ledgers",
+          "external_projection_candidates"
+        ],
+        "manual_overrides_supported": true
+      },
+      "dashboard": "zhiku-2-strategy-board-center/dashboard.html",
+      "data": "zhiku-2-strategy-board-center/dashboard-data.json",
+      "spec": "zhiku-2-strategy-board-center/project-spec.md"
+    }
+  ],
+  "templates": {
+    "project_spec": "templates/project-spec.template.md",
+    "dashboard_data": "templates/dashboard-data.template.json"
+  },
+  "ignored_examples": [
+    {
+      "title": "一次性小任务示例",
+      "reason": "未命中战略关键词或跨系统结构条件"
+    }
+  ],
+  "safety": {
+    "writes_online": false,
+    "writes_feishu": false,
+    "writes_notifications": false,
+    "mutates_real_project_status": false,
+    "external_sync": "approval_required"
+  }
+}

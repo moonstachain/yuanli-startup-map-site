@@ -1,0 +1,654 @@
+{
+  "project_id": "zhiku-2-strategy-board-center",
+  "title": "随身智库 2.0 · 战略看板中心",
+  "priority": "P0",
+  "source_trigger": "manual",
+  "north_star": "战略型任务启动后，10 分钟内自动生成可本地打开的高密度战略看板草案。",
+  "governing_thought": "随身智库 2.0 不能只做组件市场，它要把复杂任务自动升格为可管控、可拍板、可复盘的项目驾驶舱。",
+  "status": "推进",
+  "risk_light": "amber",
+  "status_machine": {
+    "current": "推进",
+    "allowed": [
+      "探索",
+      "设计",
+      "推进",
+      "阻塞",
+      "收敛",
+      "复盘"
+    ]
+  },
+  "next_action": "补齐 project-spec.md 的范围、验收项和 typed relationships",
+  "cbm_osa_map": {
+    "capability_domains": [
+      "技能市场",
+      "战略看板",
+      "任务规格",
+      "证据治理",
+      "外部同步门",
+      "递归自评"
+    ],
+    "responsibility_layers": [
+      "战略层",
+      "设计层",
+      "执行层",
+      "验证层",
+      "递归进化层"
+    ],
+    "coverage_cells": [
+      {
+        "layer": "战略层",
+        "domain": "技能市场",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "战略看板",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "任务规格",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "证据治理",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "外部同步门",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "递归自评",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "技能市场",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "战略看板",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "任务规格",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "证据治理",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "外部同步门",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "递归自评",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "技能市场",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "战略看板",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "技能市场",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "战略看板",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "技能市场",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "战略看板",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      }
+    ],
+    "missing_cells": [
+      {
+        "layer": "执行层",
+        "domain": "任务规格",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "证据治理",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "外部同步门",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "递归自评",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "任务规格",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "证据治理",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "外部同步门",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "递归自评",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "任务规格",
+        "status": "missing",
+        "signal": "待补证据"
+      }
+    ],
+    "risk_cells": [],
+    "next_cells_to_unlock": [
+      {
+        "layer": "递归进化层",
+        "domain": "证据治理",
+        "status": "next",
+        "signal": "下一轮沉淀"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "外部同步门",
+        "status": "next",
+        "signal": "下一轮沉淀"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "递归自评",
+        "status": "next",
+        "signal": "下一轮沉淀"
+      }
+    ]
+  },
+  "okr": [
+    {
+      "objective": "战略型任务启动后，10 分钟内自动生成可本地打开的高密度战略看板草案。",
+      "key_results": [
+        "每个项目至少 1 个北极星、1 个状态、1 个下一步、1 个证据引用",
+        "CBM-OSA 至少覆盖横向能力域和纵向责任层",
+        "外部同步默认 dry-run，不直接写入"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M1",
+      "title": "项目草案生成",
+      "owner": "Codex",
+      "status": "done",
+      "due": "2026-06-27",
+      "progress": 100
+    },
+    {
+      "id": "M2",
+      "title": "CBM-OSA 覆盖审计",
+      "owner": "liming",
+      "status": "next",
+      "due": "待确认",
+      "progress": 35
+    },
+    {
+      "id": "M3",
+      "title": "OKR/动作表进入周推进",
+      "owner": "待确认",
+      "status": "planned",
+      "due": "待确认",
+      "progress": 15
+    }
+  ],
+  "actions": [
+    {
+      "id": "A1",
+      "priority": "P0",
+      "title": "补齐 project-spec.md 的范围、验收项和 typed relationships",
+      "owner": "liming",
+      "status": "next",
+      "blocked_by": "",
+      "evidence_refs": [
+        "E1"
+      ],
+      "next_step": "把当前草案升级为可执行任务规格。"
+    },
+    {
+      "id": "A2",
+      "priority": "P0",
+      "title": "审一遍 CBM-OSA 矩阵的 missing/risk cells",
+      "owner": "liming",
+      "status": "waiting_decision",
+      "blocked_by": "待拍板",
+      "evidence_refs": [
+        "E1"
+      ],
+      "next_step": "决定哪些格子本轮必须解锁。"
+    },
+    {
+      "id": "A3",
+      "priority": "P1",
+      "title": "生成外部同步 dry-run 清单",
+      "owner": "待确认",
+      "status": "planned",
+      "blocked_by": "外部写入门",
+      "evidence_refs": [],
+      "next_step": "只列候选字段，不写飞书/线上。"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R1",
+      "level": "amber",
+      "title": "看板草案可能先于真实状态更新",
+      "mitigation": "标注 local_generated，外部状态以审批后的 Feishu/Base/API 为准。"
+    },
+    {
+      "id": "R2",
+      "level": "amber",
+      "title": "CBM-OSA 矩阵存在 missing cells",
+      "mitigation": "把 missing/risk cells 固定放在右侧拍板区。"
+    }
+  ],
+  "decisions_needed": [
+    {
+      "id": "D1",
+      "title": "本项目是否进入 P0-P1 周推进",
+      "owner": "liming",
+      "options": [
+        "推进",
+        "暂缓",
+        "拆成子项目"
+      ]
+    },
+    {
+      "id": "D2",
+      "title": "是否允许生成 Feishu/Base dry-run 字段映射",
+      "owner": "liming",
+      "options": [
+        "只生成清单",
+        "暂不处理"
+      ]
+    }
+  ],
+  "evidence_refs": [
+    {
+      "id": "E1",
+      "type": "dir",
+      "title": "zhiku-self-assess",
+      "path": "claude-harness/zhiku-self-assess",
+      "claim": "随身智库 2.0 · 战略看板中心 的本地证据源",
+      "confidence": "high"
+    },
+    {
+      "id": "E2",
+      "type": "json",
+      "title": "zhiku-self-assess/audit.json",
+      "path": "claude-harness/zhiku-self-assess/audit.json",
+      "claim": "随身智库 2.0 · 战略看板中心 的本地证据源",
+      "confidence": "high"
+    },
+    {
+      "id": "E3",
+      "type": "html",
+      "title": "zhiku-self-assess/zhiku-market-roadmap.html",
+      "path": "claude-harness/zhiku-self-assess/zhiku-market-roadmap.html",
+      "claim": "随身智库 2.0 · 战略看板中心 的本地证据源",
+      "confidence": "high"
+    }
+  ],
+  "progress": {
+    "percent": 50,
+    "status_text": "本地草案已生成，真实推进状态待人工确认"
+  },
+  "density_score": {
+    "dimensions": {
+      "时间密度": 7,
+      "判定密度": 9,
+      "不确定性": 8,
+      "多源交叉": 8,
+      "共识/分歧": 6,
+      "frozen/dynamic": 8,
+      "状态机": 9,
+      "高维降维": 9,
+      "行动建议": 9,
+      "元信息": 9,
+      "历史轨迹": 7,
+      "个人意义": 9
+    },
+    "total": 98,
+    "max": 120,
+    "grade": "high-density",
+    "rubric": "high-info-density-dashboard-designer 12 维"
+  },
+  "dashboard_score": {
+    "dimensions": {
+      "时间密度": 7,
+      "判定密度": 9,
+      "不确定性": 8,
+      "多源交叉": 8,
+      "共识/分歧": 6,
+      "frozen/dynamic": 8,
+      "状态机": 9,
+      "高维降维": 9,
+      "行动建议": 9,
+      "元信息": 9,
+      "历史轨迹": 7,
+      "个人意义": 9
+    },
+    "total": 98,
+    "max": 120,
+    "grade": "high-density",
+    "rubric": "high-info-density-dashboard-designer 12 维"
+  },
+  "data_freshness": {
+    "generated_at": "2026-06-27T11:26:46+00:00",
+    "source_mode": "local_scan",
+    "external_state_verified": false,
+    "evidence_freshness": {
+      "evidence_count": 3,
+      "missing_or_low_count": 0,
+      "gap_policy": "missing evidence is never rendered as green"
+    }
+  },
+  "recognition": {
+    "strategic_task": true,
+    "reasons": [
+      "keyword:战略",
+      "keyword:看板",
+      "structural:同步"
+    ],
+    "mode": "auto_draft_local_only"
+  },
+  "external_write_gates": [
+    {
+      "target": "online_zhiku",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "feishu_base",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "notification",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    }
+  ],
+  "lifecycle": {
+    "version": "v2",
+    "current": "推进",
+    "states": [
+      "探索",
+      "设计",
+      "推进",
+      "阻塞",
+      "收敛",
+      "复盘"
+    ],
+    "flow": [
+      {
+        "from": "探索",
+        "to": "设计",
+        "gate": "目标、范围、证据入口确认"
+      },
+      {
+        "from": "设计",
+        "to": "推进",
+        "gate": "OKR、里程碑、Top actions 确认"
+      },
+      {
+        "from": "推进",
+        "to": "阻塞",
+        "gate": "出现待拍板、权限、数据或依赖阻塞"
+      },
+      {
+        "from": "推进",
+        "to": "收敛",
+        "gate": "主要交付物进入验收"
+      },
+      {
+        "from": "收敛",
+        "to": "复盘",
+        "gate": "验收完成并沉淀经验"
+      }
+    ],
+    "transition_policy": "manual_decision_only",
+    "status_source": "preserved_existing_dashboard_data"
+  },
+  "source_portfolio": [
+    {
+      "name": "high-info-density-dashboard-designer",
+      "role": "12 维信息密度评分标准"
+    },
+    {
+      "name": "deep-space-cockpit-factory",
+      "role": "单页 HTML cockpit 的数据/渲染分离范式"
+    },
+    {
+      "name": "ip-company-strategy-cockpit",
+      "role": "IP/企业战略判断型驾驶舱模板参考"
+    },
+    {
+      "name": "dixin-strategy-cockpit",
+      "role": "战略判断、项目排布、预警型驾驶舱模板参考"
+    },
+    {
+      "name": "feishu-dashboard-automator",
+      "role": "后续飞书投射层，v1 不真写入"
+    },
+    {
+      "name": "lark-base",
+      "role": "后续 Base/多维表格承载，v1 不真写入"
+    },
+    {
+      "name": "task-spec",
+      "role": "战略任务规格草案生成器"
+    },
+    {
+      "name": "yuanli-os-cbm-osa-greenbook",
+      "role": "CBM-OSA 横向到边、纵向到底的战略母版"
+    }
+  ],
+  "navigation": {
+    "primary": "战略看板",
+    "sub_entries": [
+      "全部项目",
+      "P0-P1 项目",
+      "风险项目",
+      "待拍板",
+      "已完成",
+      "模板库"
+    ]
+  },
+  "last_updated": "2026-06-27T11:26:46+00:00",
+  "safety": {
+    "local_only": true,
+    "writes_online": false,
+    "writes_feishu": false,
+    "mutates_real_project_status": false,
+    "external_sync_mode": "candidate_list_only"
+  },
+  "operating_ledgers": {
+    "action_ledger": {
+      "count": 3,
+      "open_count": 3,
+      "p0_count": 2
+    },
+    "risk_register": {
+      "count": 2,
+      "red_count": 0,
+      "amber_count": 2
+    },
+    "decision_queue": {
+      "count": 2,
+      "owners": [
+        "liming"
+      ]
+    },
+    "evidence_index": {
+      "count": 3,
+      "missing_or_low_count": 0
+    },
+    "gap_register": {
+      "missing_cells": 9,
+      "risk_cells": 0,
+      "next_cells": 3,
+      "gap_policy": "缺口必须显式显示为待采集/待确认/missing，不得渲染为绿色。"
+    }
+  },
+  "external_projection_candidates": [
+    {
+      "target": "online_zhiku",
+      "mode": "dry_run",
+      "status": "closed",
+      "approval_required": true,
+      "fields": [
+        "project_id",
+        "title",
+        "priority",
+        "status",
+        "risk_light",
+        "north_star",
+        "next_action",
+        "decisions_needed",
+        "evidence_refs"
+      ],
+      "receipt": "candidate_only_no_publish"
+    },
+    {
+      "target": "feishu_base",
+      "mode": "dry_run",
+      "status": "closed",
+      "approval_required": true,
+      "fields": [
+        "project_id",
+        "title",
+        "priority",
+        "status",
+        "risk_light",
+        "north_star",
+        "next_action",
+        "decisions_needed",
+        "evidence_refs"
+      ],
+      "receipt": "candidate_only_no_bitable_write"
+    },
+    {
+      "target": "notification",
+      "mode": "dry_run",
+      "status": "closed",
+      "approval_required": true,
+      "fields": [
+        "project_id",
+        "risk_light",
+        "next_action",
+        "decisions_needed"
+      ],
+      "receipt": "candidate_only_no_notification"
+    }
+  ],
+  "rebuild_policy": {
+    "mode": "regenerate_operational_signals_preserve_manual_judgment",
+    "preserved_fields": [
+      "status",
+      "status_machine",
+      "north_star",
+      "governing_thought",
+      "okr",
+      "milestones",
+      "actions",
+      "risks",
+      "decisions_needed",
+      "progress"
+    ],
+    "manual_override_fields": [
+      "status",
+      "status_machine",
+      "north_star",
+      "governing_thought",
+      "okr",
+      "milestones",
+      "actions",
+      "risks",
+      "decisions_needed",
+      "progress"
+    ],
+    "regenerated_fields": [
+      "evidence_refs",
+      "cbm_osa_map",
+      "density_score",
+      "dashboard_score",
+      "data_freshness",
+      "risk_light",
+      "next_action",
+      "operating_ledgers",
+      "external_projection_candidates"
+    ],
+    "manual_overrides_supported": true
+  }
+}

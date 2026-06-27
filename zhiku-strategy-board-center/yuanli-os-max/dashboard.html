@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>原力OS-MAX</title>
+<style>
+:root{--bg:#06080d;--panel:#101722;--panel2:#0c121b;--line:#213044;--ink:#edf2f7;--muted:#9cafc4;--gold:#d8b56d;--teal:#71c7b2;--blue:#83aee8;--amber:#e0ae55;--red:#df6b6b;--green:#6cc07d}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",sans-serif;line-height:1.48}
+a{color:inherit} .shell{display:grid;grid-template-columns:168px minmax(0,1fr) 292px;min-height:100vh}
+.nav{position:sticky;top:0;height:100vh;border-right:1px solid var(--line);background:#080d14;padding:18px 14px}
+.brand{font:600 17px Georgia,"Songti SC",serif;color:#f2dfba;margin-bottom:18px} .nav a{display:block;text-decoration:none;color:var(--muted);font-size:12px;padding:8px 9px;border-radius:6px;margin:3px 0} .nav a.active,.nav a:hover{background:#121d2b;color:var(--ink)}
+.main{padding:22px 22px 48px;max-width:1320px} .side{position:sticky;top:0;height:100vh;border-left:1px solid var(--line);background:#090f17;padding:18px 14px;overflow:auto}
+.eyebrow{font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase} h1{font-family:Georgia,"Songti SC",serif;font-size:30px;line-height:1.16;margin:8px 0 8px;letter-spacing:0} h2{font-size:15px;color:var(--teal);margin:20px 0 10px} p{color:var(--muted);margin:6px 0}
+.hero{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:16px} .gt{font-size:16px;color:#fff6e6;max-width:980px} .metrics{display:grid;grid-template-columns:repeat(5,minmax(130px,1fr));gap:9px;margin-top:14px}
+.metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px;min-height:78px} .metric b{display:block;color:var(--gold);font-size:22px;font-variant-numeric:tabular-nums} .metric span{display:block;color:var(--muted);font-size:11px}
+.matrix{width:100%;border-collapse:collapse;background:var(--panel2);border:1px solid var(--line);font-size:11px} .matrix th,.matrix td{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left} .matrix th{color:#e7d6ad;background:#101722} .cell b{display:block;text-transform:uppercase;font-size:10px} .cell span{display:block;color:var(--muted)} .covered b{color:var(--green)} .missing b{color:var(--amber)} .risk b{color:var(--red)} .next b{color:var(--blue)} .open b{color:var(--muted)}
+.tables{display:grid;grid-template-columns:1fr 1fr;gap:14px} table{width:100%;border-collapse:collapse;font-size:11.5px;background:var(--panel2)} td,th{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top} th{color:var(--gold);font-weight:600}
+.pin{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;background:var(--panel);padding:10px;margin-bottom:9px} .pin b{display:block;color:var(--gold);font-size:12px} .pin span{display:block;font-size:12px;margin:4px 0} .pin small{color:var(--muted);font-size:11px} .pin.risk{border-left-color:var(--amber)} .pin.risk.red{border-left-color:var(--red)}
+.note{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:11px;color:var(--muted);font-size:12px} ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:12px} .footer{border-top:1px solid var(--line);margin-top:20px;padding-top:12px;color:#65758a;font-size:11px}
+@media(max-width:1060px){.shell{grid-template-columns:1fr}.nav,.side{position:relative;height:auto;border:0}.metrics,.tables{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="nav">
+    <div class="brand">随身智库</div>
+    <a href="../index.html">自治体检</a>
+    <a class="active" href="strategy-board-index.html">战略看板</a>
+    <a href="strategy-board-index.html#p0">P0-P1 项目</a>
+    <a href="strategy-board-index.html#risk">风险项目</a>
+    <a href="strategy-board-index.html#decisions">待拍板</a>
+    <a href="strategy-board-index.html#completed">已完成</a>
+    <a href="strategy-board-index.html#templates">模板库</a>
+  </nav>
+  <main class="main">
+    <section class="hero">
+      <div class="eyebrow">OSA · yuanli-os-max · v2 · local-only</div>
+      <h1>原力OS-MAX</h1>
+      <p class="gt">原力OS-MAX 的关键是横向不漏能力域，纵向不丢责任层，并把每次项目推进反写成系统进化。</p>
+      <div class="metrics">
+        <div class="metric"><b>设计</b><span>当前状态</span></div>
+        <div class="metric"><b>red</b><span>风险灯</span></div>
+        <div class="metric"><b>P0</b><span>优先级</span></div>
+        <div class="metric"><b>50%</b><span>草案进度</span></div>
+        <div class="metric"><b>94/120</b><span>信息密度</span></div>
+      </div>
+      <p><b>北极星:</b> 把原力 OS 的 CBM-OSA 能力域、责任层、递归进化机制压成一张可执行总图。</p>
+      <p><b>下一步:</b> 补齐 project-spec.md 的范围、验收项和 typed relationships</p>
+    </section>
+
+    <h2>CBM-OSA 战略图</h2>
+    <table class="matrix"><thead><tr><th>责任层 / 能力域</th><th>能力域</th><th>系统模块</th><th>渠道</th><th>数据源</th><th>产物</th><th>风险</th></tr></thead><tbody><tr><th>战略层</th><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td></tr><tr><th>设计层</th><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td></tr><tr><th>执行层</th><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td></tr><tr><th>验证层</th><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td><td class="cell risk"><b>risk</b><span>外部写入需人工门</span></td></tr><tr><th>递归进化层</th><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell covered"><b>covered</b><span>已有草案/证据</span></td><td class="cell missing"><b>missing</b><span>待补证据</span></td><td class="cell next"><b>next</b><span>下一轮沉淀</span></td><td class="cell next"><b>next</b><span>下一轮沉淀</span></td><td class="cell next"><b>next</b><span>下一轮沉淀</span></td></tr></tbody></table>
+
+    <div class="tables">
+      <section><h2>OKR / 里程碑</h2><table><thead><tr><th>ID</th><th>目标</th><th>负责人</th><th>状态</th><th>截止</th><th>进度</th></tr></thead><tbody><tr><td>M1</td><td>项目草案生成</td><td>Codex</td><td>done</td><td>2026-06-27</td><td>100%</td></tr><tr><td>M2</td><td>CBM-OSA 覆盖审计</td><td>liming</td><td>next</td><td>待确认</td><td>35%</td></tr><tr><td>M3</td><td>OKR/动作表进入周推进</td><td>待确认</td><td>planned</td><td>待确认</td><td>15%</td></tr></tbody></table></section>
+      <section><h2>任务执行表</h2><table><thead><tr><th>ID</th><th>P</th><th>动作</th><th>负责人</th><th>状态</th><th>阻塞</th><th>下一步</th></tr></thead><tbody><tr><td>A1</td><td>P0</td><td>补齐 project-spec.md 的范围、验收项和 typed relationships</td><td>liming</td><td>next</td><td></td><td>把当前草案升级为可执行任务规格。</td></tr><tr><td>A2</td><td>P0</td><td>审一遍 CBM-OSA 矩阵的 missing/risk cells</td><td>liming</td><td>waiting_decision</td><td>待拍板</td><td>决定哪些格子本轮必须解锁。</td></tr><tr><td>A3</td><td>P1</td><td>生成外部同步 dry-run 清单</td><td>待确认</td><td>planned</td><td>外部写入门</td><td>只列候选字段，不写飞书/线上。</td></tr></tbody></table></section>
+    </div>
+
+    <section><h2>证据链</h2><table><thead><tr><th>ID</th><th>类型</th><th>来源</th><th>置信</th><th>支撑判断</th></tr></thead><tbody><tr><td>E1</td><td>dir</td><td>yuanli-os-max</td><td>high</td><td>原力OS-MAX 的本地证据源</td></tr><tr><td>E2</td><td>dir</td><td>yuanli-strategy-cbm-osa-merged</td><td>high</td><td>原力OS-MAX 的本地证据源</td></tr><tr><td>E3</td><td>dir</td><td>yuanli-strategy-cbm-osa-atlas</td><td>high</td><td>原力OS-MAX 的本地证据源</td></tr></tbody></table></section>
+    <div class="tables">
+      <section><h2>项目生命周期</h2><table><thead><tr><th>从</th><th>到</th><th>人工门</th></tr></thead><tbody><tr><td>探索</td><td>设计</td><td>目标、范围、证据入口确认</td></tr><tr><td>设计</td><td>推进</td><td>OKR、里程碑、Top actions 确认</td></tr><tr><td>推进</td><td>阻塞</td><td>出现待拍板、权限、数据或依赖阻塞</td></tr><tr><td>推进</td><td>收敛</td><td>主要交付物进入验收</td></tr><tr><td>收敛</td><td>复盘</td><td>验收完成并沉淀经验</td></tr></tbody></table></section>
+      <section><h2>运营台账</h2><table><thead><tr><th>台账</th><th>状态</th></tr></thead><tbody><tr><td>action_ledger</td><td>{&quot;count&quot;: 3, &quot;open_count&quot;: 3, &quot;p0_count&quot;: 2}</td></tr><tr><td>risk_register</td><td>{&quot;count&quot;: 2, &quot;red_count&quot;: 1, &quot;amber_count&quot;: 1}</td></tr><tr><td>decision_queue</td><td>{&quot;count&quot;: 2, &quot;owners&quot;: [&quot;liming&quot;]}</td></tr><tr><td>evidence_index</td><td>{&quot;count&quot;: 3, &quot;missing_or_low_count&quot;: 0}</td></tr><tr><td>gap_register</td><td>{&quot;missing_cells&quot;: 8, &quot;risk_cells&quot;: 1, &quot;next_cells&quot;: 3, &quot;gap_policy&quot;: &quot;缺口必须显式显示为待采集/待确认/missing，不得渲染为绿色。&quot;}</td></tr></tbody></table></section>
+    </div>
+    <section><h2>12 维信息密度</h2><table><tbody><tr><td>时间密度</td><td><b>5</b>/10</td></tr><tr><td>判定密度</td><td><b>9</b>/10</td></tr><tr><td>不确定性</td><td><b>8</b>/10</td></tr><tr><td>多源交叉</td><td><b>8</b>/10</td></tr><tr><td>共识/分歧</td><td><b>6</b>/10</td></tr><tr><td>frozen/dynamic</td><td><b>8</b>/10</td></tr><tr><td>状态机</td><td><b>9</b>/10</td></tr><tr><td>高维降维</td><td><b>9</b>/10</td></tr><tr><td>行动建议</td><td><b>9</b>/10</td></tr><tr><td>元信息</td><td><b>9</b>/10</td></tr><tr><td>历史轨迹</td><td><b>5</b>/10</td></tr><tr><td>个人意义</td><td><b>9</b>/10</td></tr></tbody></table></section>
+    <div class="footer">last_updated 2026-06-27T11:26:46+00:00 · local-only · no Feishu writes · no online publishing · render from dashboard-data.json</div>
+  </main>
+  <aside class="side">
+    <h2>拍板区</h2>
+    <div class='pin'><b>D1</b><span>本项目是否进入 P0-P1 周推进</span><small>推进 / 暂缓 / 拆成子项目</small></div><div class='pin'><b>D2</b><span>是否允许生成 Feishu/Base dry-run 字段映射</span><small>只生成清单 / 暂不处理</small></div>
+    <h2>外部写入门</h2>
+    <div class='pin'><b>online_zhiku</b><span>candidate_list_only</span><small>approval_required=True · closed</small></div><div class='pin'><b>feishu_base</b><span>candidate_list_only</span><small>approval_required=True · closed</small></div><div class='pin'><b>notification</b><span>candidate_list_only</span><small>approval_required=True · closed</small></div>
+    <h2>外部投射候选</h2>
+    <div class='pin'><b>online_zhiku</b><span>dry_run</span><small>candidate_only_no_publish · closed</small></div><div class='pin'><b>feishu_base</b><span>dry_run</span><small>candidate_only_no_bitable_write · closed</small></div><div class='pin'><b>notification</b><span>dry_run</span><small>candidate_only_no_notification · closed</small></div>
+    <h2>风险灯</h2>
+    <div class='pin risk red'><b>R1 · red</b><span>看板草案可能先于真实状态更新</span><small>标注 local_generated，外部状态以审批后的 Feishu/Base/API 为准。</small></div><div class='pin risk amber'><b>R2 · amber</b><span>CBM-OSA 矩阵存在 missing cells</span><small>把 missing/risk cells 固定放在右侧拍板区。</small></div>
+    <h2>最近证据</h2>
+    <div class='pin'><b>E1</b><span>yuanli-os-max</span><small>high · 原力OS-MAX 的本地证据源</small></div><div class='pin'><b>E2</b><span>yuanli-strategy-cbm-osa-merged</span><small>high · 原力OS-MAX 的本地证据源</small></div><div class='pin'><b>E3</b><span>yuanli-strategy-cbm-osa-atlas</span><small>high · 原力OS-MAX 的本地证据源</small></div>
+    <h2>最近缺口</h2>
+    <div class="note"><ul><li>执行层 / 渠道: 待补证据</li><li>执行层 / 数据源: 待补证据</li><li>执行层 / 产物: 待补证据</li><li>执行层 / 风险: 待补证据</li><li>验证层 / 渠道: 待补证据</li><li>验证层 / 数据源: 待补证据</li></ul></div>
+    <h2>安全边界</h2>
+    <div class="note">外部同步只生成候选清单；不写线上、不写飞书、不改真实项目状态。</div>
+  </aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,1031 @@
+{
+  "project_id": "luki-max-content-engine",
+  "title": "Luki Max 全自动内容工程",
+  "priority": "P0",
+  "source_trigger": "OSA",
+  "north_star": "每天把 24 小时伴随素材转成生产力证据、选题队列、样片任务、私人提醒和原力大脑审核候选。",
+  "governing_thought": "以工作的生产力为第一性原理：素材不是终点，能证明行动、生成内容、驱动复盘并安全写回系统的素材才是资产。",
+  "status": "设计",
+  "risk_light": "amber",
+  "status_machine": {
+    "current": "设计",
+    "allowed": [
+      "探索",
+      "设计",
+      "推进",
+      "阻塞",
+      "收敛",
+      "复盘"
+    ]
+  },
+  "next_action": "升级 Looki daily 真相层：为每个 moment 写入 production_score、moment_category、privacy_reason、next_action",
+  "cbm_osa_map": {
+    "capability_domains": [
+      "生产力证据",
+      "自动剪辑",
+      "任务调度",
+      "选题规划",
+      "飞书私域",
+      "原力审核门",
+      "战略看板"
+    ],
+    "responsibility_layers": [
+      "战略层",
+      "设计层",
+      "执行层",
+      "验证层",
+      "递归进化层"
+    ],
+    "coverage_cells": [
+      {
+        "layer": "战略层",
+        "domain": "生产力证据",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "自动剪辑",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "任务调度",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "选题规划",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "飞书私域",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "原力审核门",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "战略层",
+        "domain": "战略看板",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "生产力证据",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "自动剪辑",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "任务调度",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "选题规划",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "飞书私域",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "原力审核门",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "设计层",
+        "domain": "战略看板",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "生产力证据",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "自动剪辑",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "生产力证据",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "自动剪辑",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "生产力证据",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "自动剪辑",
+        "status": "covered",
+        "signal": "已有草案/证据"
+      }
+    ],
+    "missing_cells": [
+      {
+        "layer": "执行层",
+        "domain": "任务调度",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "选题规划",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "飞书私域",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "原力审核门",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "执行层",
+        "domain": "战略看板",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "任务调度",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "选题规划",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "飞书私域",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "原力审核门",
+        "status": "missing",
+        "signal": "待补证据"
+      },
+      {
+        "layer": "验证层",
+        "domain": "战略看板",
+        "status": "missing",
+        "signal": "待补证据"
+      }
+    ],
+    "risk_cells": [],
+    "next_cells_to_unlock": [
+      {
+        "layer": "递归进化层",
+        "domain": "选题规划",
+        "status": "next",
+        "signal": "下一轮沉淀"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "飞书私域",
+        "status": "next",
+        "signal": "下一轮沉淀"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "原力审核门",
+        "status": "next",
+        "signal": "下一轮沉淀"
+      },
+      {
+        "layer": "递归进化层",
+        "domain": "战略看板",
+        "status": "next",
+        "signal": "下一轮沉淀"
+      }
+    ]
+  },
+  "okr": [
+    {
+      "objective": "把 24 小时伴随素材稳定转成生产力证据和内容资产。",
+      "key_results": [
+        "每周至少 5 张高价值生产力证据卡进入 not-authorized 审核候选",
+        "每周至少 12 个短视频选题具备脚本、分镜、素材目录和隐私边界",
+        "每周至少 1 条 Top 1 样片通过 ffprobe 或写明 failed receipt",
+        "daily/weekly/clips/yuanli-gate/strategy_board 均有 receipt 或 validator 证据"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "id": "P0",
+      "title": "统一真相层",
+      "owner": "Codex",
+      "status": "next",
+      "due": "待确认",
+      "progress": 45
+    },
+    {
+      "id": "P1",
+      "title": "生产力语义评分",
+      "owner": "liming",
+      "status": "planned",
+      "due": "待确认",
+      "progress": 15
+    },
+    {
+      "id": "P2",
+      "title": "选题工厂",
+      "owner": "liming",
+      "status": "planned",
+      "due": "待确认",
+      "progress": 15
+    },
+    {
+      "id": "P3",
+      "title": "Clip Pro 样片",
+      "owner": "liming",
+      "status": "planned",
+      "due": "待确认",
+      "progress": 10
+    },
+    {
+      "id": "P4",
+      "title": "原力大脑审核门",
+      "owner": "liming",
+      "status": "gated",
+      "due": "待确认",
+      "progress": 20
+    },
+    {
+      "id": "P5",
+      "title": "随身智库战略看板",
+      "owner": "Codex",
+      "status": "in_progress",
+      "due": "2026-06-27",
+      "progress": 65
+    }
+  ],
+  "actions": [
+    {
+      "id": "A1",
+      "priority": "P0",
+      "title": "升级 Looki daily 真相层：为每个 moment 写入 production_score、moment_category、privacy_reason、next_action",
+      "owner": "liming",
+      "status": "next",
+      "blocked_by": "",
+      "evidence_refs": [
+        "E1"
+      ],
+      "next_step": "扩展 build_looki_ops.py 与 looki_ops_pipeline.py daily 的结构化输出。"
+    },
+    {
+      "id": "A2",
+      "priority": "P0",
+      "title": "把 clips 流程从文件夹级候选升级为镜头级 dossier，并保留 Top 1 自动样片上限",
+      "owner": "liming",
+      "status": "planned",
+      "blocked_by": "Clip Pro 适配",
+      "evidence_refs": [
+        "E6"
+      ],
+      "next_step": "输出 shots.json、story_arc、ffprobe receipt 和剪映交接包。"
+    },
+    {
+      "id": "A3",
+      "priority": "P0",
+      "title": "将 weekly brief 升级为生产力周报：时间投入、工作密度、内容资产、证据卡、下周动作",
+      "owner": "liming",
+      "status": "planned",
+      "blocked_by": "",
+      "evidence_refs": [
+        "E1"
+      ],
+      "next_step": "固定 weekly JSON/MD 字段，并校验不混入未结束周数据。"
+    },
+    {
+      "id": "A4",
+      "priority": "P1",
+      "title": "建立 Luki Topic Factory：每天 Top 12 选题、脚本、分镜、素材目录、隐私边界",
+      "owner": "liming",
+      "status": "planned",
+      "blocked_by": "",
+      "evidence_refs": [
+        "E7"
+      ],
+      "next_step": "把选题规划接入 clips/short-video-topics.json 的验收脚本。"
+    },
+    {
+      "id": "A5",
+      "priority": "P1",
+      "title": "保持原力大脑 evidence writeback preview lane，核心写回必须等待人工授权记录",
+      "owner": "liming",
+      "status": "gated",
+      "blocked_by": "原力大脑人工门",
+      "evidence_refs": [
+        "E1"
+      ],
+      "next_step": "校验 authorization_status=not-authorized 且无核心库写入。"
+    },
+    {
+      "id": "A6",
+      "priority": "P1",
+      "title": "把本项目状态回流到随身智库战略看板中心，保留 local-only 与 external_sync approval gate",
+      "owner": "liming",
+      "status": "in_progress",
+      "blocked_by": "",
+      "evidence_refs": [
+        "E1"
+      ],
+      "next_step": "重跑 build_strategy_boards.py self-test 并验证全局入口不被 Luki 构建器覆盖。"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R1",
+      "level": "red",
+      "title": "工作/私人画面被误判为公开候选",
+      "mitigation": "public_candidate_after_review 只是候选；公开发布、对外群和平台分发必须人工复核画面与上下文。"
+    },
+    {
+      "id": "R2",
+      "level": "amber",
+      "title": "素材数量排序掩盖真实生产力价值",
+      "mitigation": "按工作密度、证据价值、视觉质量、叙事潜力、可剪辑性、外部适配度、稀缺性综合打分。"
+    },
+    {
+      "id": "R3",
+      "level": "amber",
+      "title": "样片渲染失败阻断每日经营闭环",
+      "mitigation": "剪辑失败只写 failed receipt，不阻断 daily/weekly/看板重建。"
+    }
+  ],
+  "decisions_needed": [
+    {
+      "id": "D1",
+      "title": "本项目是否进入 P0-P1 周推进",
+      "owner": "liming",
+      "options": [
+        "推进",
+        "暂缓",
+        "拆成子项目"
+      ]
+    },
+    {
+      "id": "D2",
+      "title": "是否允许生成 Feishu/Base dry-run 字段映射",
+      "owner": "liming",
+      "options": [
+        "只生成清单",
+        "暂不处理"
+      ]
+    }
+  ],
+  "evidence_refs": [
+    {
+      "id": "E1",
+      "type": "json",
+      "title": "looki-memory-ops/luki-max-content-engine-plan.json",
+      "path": "claude-harness/looki-memory-ops/luki-max-content-engine-plan.json",
+      "claim": "Luki Max 全自动内容工程 的本地证据源",
+      "confidence": "high"
+    },
+    {
+      "id": "E2",
+      "type": "md",
+      "title": "looki-memory-ops/Luki-Max-全自动内容工程升级方案.md",
+      "path": "claude-harness/looki-memory-ops/Luki-Max-全自动内容工程升级方案.md",
+      "claim": "Luki Max 全自动内容工程 的本地证据源",
+      "confidence": "high"
+    },
+    {
+      "id": "E3",
+      "type": "py",
+      "title": "looki-memory-ops/build_luki_max_content_engine.py",
+      "path": "claude-harness/looki-memory-ops/build_luki_max_content_engine.py",
+      "claim": "Luki Max 全自动内容工程 的本地证据源",
+      "confidence": "high"
+    },
+    {
+      "id": "E4",
+      "type": "dir",
+      "title": "strategic-projects/luki-max-content-engine",
+      "path": "claude-harness/strategic-projects/luki-max-content-engine",
+      "claim": "Luki Max 全自动内容工程 的本地证据源",
+      "confidence": "high"
+    },
+    {
+      "id": "E5",
+      "type": "dir",
+      "title": "zhiku-self-assess/strategy-boards/luki-max-content-engine",
+      "path": "claude-harness/zhiku-self-assess/strategy-boards/luki-max-content-engine",
+      "claim": "Luki Max 全自动内容工程 的本地证据源",
+      "confidence": "high"
+    },
+    {
+      "id": "E6",
+      "type": "portfolio-module",
+      "title": "Luki Clip Pro",
+      "path": "looki-memory-ops/luki-max-content-engine-plan.json",
+      "claim": "nas-video-autoclip -> clip-pro",
+      "confidence": "high"
+    },
+    {
+      "id": "E7",
+      "type": "portfolio-module",
+      "title": "Luki Topic Factory",
+      "path": "looki-memory-ops/luki-max-content-engine-plan.json",
+      "claim": "video-erchuang-fullstack -> topic-factory",
+      "confidence": "high"
+    },
+    {
+      "id": "E8",
+      "type": "portfolio-module",
+      "title": "Luki Topic Radar",
+      "path": "looki-memory-ops/luki-max-content-engine-plan.json",
+      "claim": "viral-benchmark-radar -> topic-radar",
+      "confidence": "high"
+    },
+    {
+      "id": "E9",
+      "type": "portfolio-module",
+      "title": "Luki Ops Scheduler",
+      "path": "looki-memory-ops/luki-max-content-engine-plan.json",
+      "claim": "looki-memory + launchd existing daily/weekly wrappers -> ops-scheduler",
+      "confidence": "high"
+    },
+    {
+      "id": "E10",
+      "type": "portfolio-module",
+      "title": "Luki Strategy Board",
+      "path": "looki-memory-ops/luki-max-content-engine-plan.json",
+      "claim": "strategic-project-dashboard + high-info-density-dashboard-designer + feishu-dashboard-automator -> strategy-board",
+      "confidence": "high"
+    },
+    {
+      "id": "E11",
+      "type": "portfolio-module",
+      "title": "Luki Evidence Brain Gate",
+      "path": "looki-memory-ops/luki-max-content-engine-plan.json",
+      "claim": "yuanli-expert-brain-operator + CODEX-LLM-WIKI decision console -> brain-gate",
+      "confidence": "high"
+    }
+  ],
+  "progress": {
+    "percent": 28,
+    "status_text": "本地草案已生成，真实推进状态待人工确认"
+  },
+  "density_score": {
+    "dimensions": {
+      "时间密度": 5,
+      "判定密度": 9,
+      "不确定性": 8,
+      "多源交叉": 10,
+      "共识/分歧": 6,
+      "frozen/dynamic": 8,
+      "状态机": 9,
+      "高维降维": 9,
+      "行动建议": 10,
+      "元信息": 9,
+      "历史轨迹": 5,
+      "个人意义": 9
+    },
+    "total": 97,
+    "max": 120,
+    "grade": "high-density",
+    "rubric": "high-info-density-dashboard-designer 12 维"
+  },
+  "dashboard_score": {
+    "dimensions": {
+      "时间密度": 5,
+      "判定密度": 9,
+      "不确定性": 8,
+      "多源交叉": 10,
+      "共识/分歧": 6,
+      "frozen/dynamic": 8,
+      "状态机": 9,
+      "高维降维": 9,
+      "行动建议": 10,
+      "元信息": 9,
+      "历史轨迹": 5,
+      "个人意义": 9
+    },
+    "total": 97,
+    "max": 120,
+    "grade": "high-density",
+    "rubric": "high-info-density-dashboard-designer 12 维"
+  },
+  "data_freshness": {
+    "generated_at": "2026-06-27T11:26:46+00:00",
+    "source_mode": "local_scan",
+    "external_state_verified": false,
+    "evidence_freshness": {
+      "evidence_count": 11,
+      "missing_or_low_count": 0,
+      "gap_policy": "missing evidence is never rendered as green"
+    }
+  },
+  "recognition": {
+    "strategic_task": true,
+    "reasons": [
+      "keyword:Luki",
+      "keyword:Max",
+      "keyword:OS",
+      "keyword:原力",
+      "keyword:审核门",
+      "keyword:战略",
+      "keyword:看板",
+      "keyword:飞书",
+      "source_trigger:OSA",
+      "structural:原力大脑"
+    ],
+    "mode": "auto_draft_local_only"
+  },
+  "external_write_gates": [
+    {
+      "target": "online_zhiku",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "feishu_base",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    },
+    {
+      "target": "notification",
+      "mode": "candidate_list_only",
+      "approval_required": true,
+      "status": "closed"
+    }
+  ],
+  "lifecycle": {
+    "version": "v2",
+    "current": "设计",
+    "states": [
+      "探索",
+      "设计",
+      "推进",
+      "阻塞",
+      "收敛",
+      "复盘"
+    ],
+    "flow": [
+      {
+        "from": "探索",
+        "to": "设计",
+        "gate": "目标、范围、证据入口确认"
+      },
+      {
+        "from": "设计",
+        "to": "推进",
+        "gate": "OKR、里程碑、Top actions 确认"
+      },
+      {
+        "from": "推进",
+        "to": "阻塞",
+        "gate": "出现待拍板、权限、数据或依赖阻塞"
+      },
+      {
+        "from": "推进",
+        "to": "收敛",
+        "gate": "主要交付物进入验收"
+      },
+      {
+        "from": "收敛",
+        "to": "复盘",
+        "gate": "验收完成并沉淀经验"
+      }
+    ],
+    "transition_policy": "manual_decision_only",
+    "status_source": "preserved_existing_dashboard_data"
+  },
+  "source_portfolio": [
+    {
+      "name": "high-info-density-dashboard-designer",
+      "role": "12 维信息密度评分标准"
+    },
+    {
+      "name": "deep-space-cockpit-factory",
+      "role": "单页 HTML cockpit 的数据/渲染分离范式"
+    },
+    {
+      "name": "ip-company-strategy-cockpit",
+      "role": "IP/企业战略判断型驾驶舱模板参考"
+    },
+    {
+      "name": "dixin-strategy-cockpit",
+      "role": "战略判断、项目排布、预警型驾驶舱模板参考"
+    },
+    {
+      "name": "feishu-dashboard-automator",
+      "role": "后续飞书投射层，v1 不真写入"
+    },
+    {
+      "name": "lark-base",
+      "role": "后续 Base/多维表格承载，v1 不真写入"
+    },
+    {
+      "name": "task-spec",
+      "role": "战略任务规格草案生成器"
+    },
+    {
+      "name": "yuanli-os-cbm-osa-greenbook",
+      "role": "CBM-OSA 横向到边、纵向到底的战略母版"
+    }
+  ],
+  "navigation": {
+    "primary": "战略看板",
+    "sub_entries": [
+      "全部项目",
+      "P0-P1 项目",
+      "风险项目",
+      "待拍板",
+      "已完成",
+      "模板库"
+    ]
+  },
+  "last_updated": "2026-06-27T11:26:46+00:00",
+  "safety": {
+    "local_only": true,
+    "writes_online": false,
+    "writes_feishu": false,
+    "mutates_real_project_status": false,
+    "external_sync_mode": "candidate_list_only"
+  },
+  "operating_ledgers": {
+    "action_ledger": {
+      "count": 6,
+      "open_count": 6,
+      "p0_count": 3
+    },
+    "risk_register": {
+      "count": 3,
+      "red_count": 1,
+      "amber_count": 2
+    },
+    "decision_queue": {
+      "count": 2,
+      "owners": [
+        "liming"
+      ]
+    },
+    "evidence_index": {
+      "count": 11,
+      "missing_or_low_count": 0
+    },
+    "gap_register": {
+      "missing_cells": 10,
+      "risk_cells": 0,
+      "next_cells": 4,
+      "gap_policy": "缺口必须显式显示为待采集/待确认/missing，不得渲染为绿色。"
+    }
+  },
+  "external_projection_candidates": [
+    {
+      "target": "online_zhiku",
+      "mode": "dry_run",
+      "status": "closed",
+      "approval_required": true,
+      "fields": [
+        "project_id",
+        "title",
+        "priority",
+        "status",
+        "risk_light",
+        "north_star",
+        "next_action",
+        "decisions_needed",
+        "evidence_refs"
+      ],
+      "receipt": "candidate_only_no_publish"
+    },
+    {
+      "target": "feishu_base",
+      "mode": "dry_run",
+      "status": "closed",
+      "approval_required": true,
+      "fields": [
+        "project_id",
+        "title",
+        "priority",
+        "status",
+        "risk_light",
+        "north_star",
+        "next_action",
+        "decisions_needed",
+        "evidence_refs"
+      ],
+      "receipt": "candidate_only_no_bitable_write"
+    },
+    {
+      "target": "notification",
+      "mode": "dry_run",
+      "status": "closed",
+      "approval_required": true,
+      "fields": [
+        "project_id",
+        "risk_light",
+        "next_action",
+        "decisions_needed"
+      ],
+      "receipt": "candidate_only_no_notification"
+    }
+  ],
+  "rebuild_policy": {
+    "mode": "regenerate_operational_signals_preserve_manual_judgment",
+    "preserved_fields": [
+      "status",
+      "status_machine",
+      "north_star",
+      "governing_thought",
+      "okr",
+      "milestones",
+      "actions",
+      "risks",
+      "decisions_needed",
+      "progress"
+    ],
+    "manual_override_fields": [
+      "status",
+      "status_machine",
+      "north_star",
+      "governing_thought",
+      "okr",
+      "milestones",
+      "actions",
+      "risks",
+      "decisions_needed",
+      "progress"
+    ],
+    "regenerated_fields": [
+      "evidence_refs",
+      "cbm_osa_map",
+      "density_score",
+      "dashboard_score",
+      "data_freshness",
+      "risk_light",
+      "next_action",
+      "operating_ledgers",
+      "external_projection_candidates"
+    ],
+    "manual_overrides_supported": true
+  },
+  "portfolio_to_luki_modules": [
+    {
+      "module_id": "clip-pro",
+      "name": "Luki Clip Pro",
+      "source_portfolio": "nas-video-autoclip",
+      "capability": "自动扫描素材、切镜头、抽关键帧、镜头评分、生成导演档案、ffmpeg 样片、剪映草稿、NAS 归档。",
+      "luki_upgrade": "把 Looki moment 从文件夹级候选升级到镜头级候选，先自动生成 dossier，再由导演规则产出样片。",
+      "automation_level": "Top 1 自动样片；批量成片必须人工批准。",
+      "risk_boundary": "默认静音、默认私人；含人脸/屏幕/聊天/客户信息的片段只进内部复盘。"
+    },
+    {
+      "module_id": "topic-factory",
+      "name": "Luki Topic Factory",
+      "source_portfolio": "video-erchuang-fullstack",
+      "capability": "7 阶段交接包：原始资料、内容拆解、选题库、脚本稿、素材清单、发布包、复盘表。",
+      "luki_upgrade": "每个高价值 moment 自动形成一个轻量交接包，供短视频、人设内容、工作复盘、课程素材复用。",
+      "automation_level": "自动产 Top 12 选题、脚本、分镜、素材清单；不自动对外发布。",
+      "risk_boundary": "二创/公开表达必须保留授权备注、隐私边界和人工确认。"
+    },
+    {
+      "module_id": "topic-radar",
+      "name": "Luki Topic Radar",
+      "source_portfolio": "viral-benchmark-radar",
+      "capability": "内容赛道热词、痛点权重、钩子库、对标分、周更雷达、飞书私信周报。",
+      "luki_upgrade": "把 Luki 内生素材与外部爆款结构对齐，判断哪些真实工作片段值得变成公开内容母题。",
+      "automation_level": "周更对标与选题评分；外部平台抓取受风控与登录态约束。",
+      "risk_boundary": "对标不等于洗稿；只抽结构、钩子和迁移性。"
+    },
+    {
+      "module_id": "ops-scheduler",
+      "name": "Luki Ops Scheduler",
+      "source_portfolio": "looki-memory + launchd existing daily/weekly wrappers",
+      "capability": "每日同步昨天及更早素材、周一生成上周周报、receipt 幂等、私人飞书通知。",
+      "luki_upgrade": "把 daily/weekly/clips/yuanli-gate 变成一个生产力经营调度面，所有写入都有 receipt。",
+      "automation_level": "私人闭环全自动；外部群、核心知识库、线上部署保持人工门。",
+      "risk_boundary": "不运行 Looki internal --confirm，不删除，不修改 launchd 除非单独授权。"
+    },
+    {
+      "module_id": "strategy-board",
+      "name": "Luki Strategy Board",
+      "source_portfolio": "strategic-project-dashboard + high-info-density-dashboard-designer + feishu-dashboard-automator",
+      "capability": "本地 JSON 真相层、HTML 高密度看板、行动/风险/证据/决策台账、Feishu dry-run 投影。",
+      "luki_upgrade": "在随身智库左侧新增战略型看板入口，横向覆盖项目群，纵向钻到每个项目 L0-L4。",
+      "automation_level": "本地看板自动生成；Feishu Base 或 H5 左侧导航改造另走发布门。",
+      "risk_boundary": "看板只 surface，不自动执行不可逆动作。"
+    },
+    {
+      "module_id": "brain-gate",
+      "name": "Luki Evidence Brain Gate",
+      "source_portfolio": "yuanli-expert-brain-operator + CODEX-LLM-WIKI decision console",
+      "capability": "证据卡、审核候选、human-gated action bundle、decision console lane。",
+      "luki_upgrade": "让高价值生活/工作素材成为原力大脑的证据层，但真实写回必须有授权记录。",
+      "automation_level": "候选自动生成；核心写回不自动。",
+      "risk_boundary": "authorization_status 默认为 not-authorized。"
+    }
+  ],
+  "pipeline": {
+    "daily": {
+      "trigger": "每天 13:00；只处理昨天及更早。",
+      "inputs": [
+        "Looki cloud moments/files/journals/for_you",
+        "NAS 媒体原件与当日复盘",
+        "前一日 receipts",
+        "本地选题/证据/样片状态"
+      ],
+      "processing": [
+        "同步归档：daily_sync.py 跳过当天、跳过已归档。",
+        "素材盘点：按 day/moment/file_type/video_count/source_dir 建 inventory。",
+        "生产力语义分类：deep_work、meeting、creation、movement、life_context、admin、unknown。",
+        "隐私分级：private_internal、needs_human_review、public_candidate_after_review。",
+        "生产力内容评分：work_density 0.28 + evidence_value 0.18 + visual_quality 0.16 + narrative_potential 0.14 + clip_feasibility 0.10 + external_suitability 0.08 + novelty 0.06。",
+        "生成每日私人飞书卡片与 receipt；已有 sent receipt 则幂等跳过。"
+      ],
+      "outputs": [
+        "data/looki-inventory.json",
+        "feishu/daily-reminder-preview-YYYY-MM-DD.md",
+        "feishu/daily-reminder-send-receipt-YYYY-MM-DD.json",
+        "evidence/evidence-cards.json",
+        "clips/highlight-candidates.json",
+        "dashboard telemetry"
+      ],
+      "acceptance_gate": [
+        "also_external=false",
+        "receipt_version 存在",
+        "当天数据不归档",
+        "敏感片段不进公开候选",
+        "重复运行不重复发送"
+      ]
+    },
+    "weekly": {
+      "trigger": "每周一 09:20；生成上一自然周。",
+      "inputs": [
+        "7 天 daily inventory",
+        "daily receipts",
+        "clip topics",
+        "sample receipts",
+        "evidence cards"
+      ],
+      "processing": [
+        "聚合工作密度、内容产出、场景分布、素材产能、证据资产。",
+        "识别生产力模式：高能时段、深度工作块、会议/交流、创造性输出、生活恢复。",
+        "生成 Top 12 下周内容选题与 Top 5 原力大脑候选。",
+        "输出私人飞书周报 receipt。"
+      ],
+      "outputs": [
+        "weekly/looki-weekly-brief-START_to_END.json",
+        "weekly/looki-weekly-brief-START_to_END.md",
+        "feishu/weekly-brief-send-receipt-START_to_END.json"
+      ],
+      "acceptance_gate": [
+        "不混入未结束周数据",
+        "数字与 JSON 一致",
+        "私人发送 receipt 存在",
+        "对外发布仍为人工门"
+      ]
+    },
+    "clips": {
+      "trigger": "每日可 dry-run；周报后推荐跑一次。",
+      "inputs": [
+        "highlight-candidates.json",
+        "NAS source_dirs",
+        "production scoring",
+        "privacy labels"
+      ],
+      "processing": [
+        "生成 Top 12 短视频选题：标题、平台、隐私、脚本、分镜、素材目录、建议时长。",
+        "对 Top 1 进入 Clip Pro：探测视频、抽帧、镜头评分、生成 dossier、渲染 20-30s 静音样片。",
+        "生成剪映/人工精修交接包：plan.json、shots.json、字幕草稿、发布文案草稿。"
+      ],
+      "outputs": [
+        "clips/short-video-topics.json",
+        "clips/sample-render-receipts.json",
+        "NAS 剪辑成片/auto-samples/*.mp4",
+        "work/<date>_<title>/plan.json"
+      ],
+      "acceptance_gate": [
+        "只渲染 Top 1",
+        "ffprobe 可播放",
+        "20-30 秒",
+        "1920x1080 或明确竖屏任务时 1080x1920",
+        "不自动对外发送"
+      ]
+    },
+    "yuanli_gate": {
+      "trigger": "daily/weekly 后可自动生成候选；写回必须人工授权。",
+      "inputs": [
+        "evidence-cards.json",
+        "weekly brief",
+        "clip topics",
+        "sample receipts"
+      ],
+      "processing": [
+        "把高价值 moment 转成 evidence asset。",
+        "给每张卡建议写回位置：生活证据层、工作流复盘、内容资产、决策证据。",
+        "进入 decision console lane：looki-evidence-writeback-preview。",
+        "等待授权记录：asset_ids、writeback_target、expires_at、human_approver、rollback_plan_acknowledged。"
+      ],
+      "outputs": [
+        "memory-assets/asset-index.json",
+        "memory-assets/yuanli-brain-writeback-candidates.md",
+        "CODEX-LLM-WIKI review packet",
+        "human-gated action bundle"
+      ],
+      "acceptance_gate": [
+        "authorization_status=not-authorized",
+        "无自动核心写回",
+        "无 GitHub/NotebookLM/Feishu 外部写入",
+        "风险等级明确"
+      ]
+    },
+    "strategy_board": {
+      "trigger": "每次 daily/weekly/clips/yuanli-gate 后重建本地看板。",
+      "inputs": [
+        "pipeline receipts",
+        "action-ledger",
+        "risk-register",
+        "evidence-index",
+        "dashboard-data"
+      ],
+      "processing": [
+        "按 L0-L4 架构渲染战略看板。",
+        "按 12 维信息密度自评。",
+        "把每个阶段的 hard gate、failure fallback、owner、next action 展示在首屏可扫区域。",
+        "生成随身智库左侧导航所需 index entry。"
+      ],
+      "outputs": [
+        "strategic-projects/luki-max-content-engine/dashboard.html",
+        "zhiku-self-assess/strategy-boards/index.html",
+        "zhiku-self-assess/strategy-boards/strategy-board-index.json"
+      ],
+      "acceptance_gate": [
+        "本地 HTML 可打开",
+        "JSON 可解析",
+        "外部同步 boundary=approval_required",
+        "看板不自动执行动作"
+      ]
+    }
+  },
+  "automation_status": {
+    "daily": "existing_receipt_gated",
+    "weekly": "existing_receipt_gated",
+    "clips": "top1_sample_only",
+    "yuanli_gate": "candidate_only_not_authorized",
+    "strategy_board": "local_generated"
+  },
+  "sync_boundary": {
+    "mode": "local_only",
+    "external_sync": "approval_required",
+    "writes_feishu": false,
+    "writes_online": false,
+    "writes_yuanli_core": false
+  }
+}
